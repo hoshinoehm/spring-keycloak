@@ -1,4 +1,4 @@
-package br.com.curso.springkeycloak.models;
+package br.com.curso.springkeycloak.model;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

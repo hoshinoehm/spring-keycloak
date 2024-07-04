@@ -1,8 +1,8 @@
-package br.com.curso.springkeycloak.controllers;
+package br.com.curso.springkeycloak.controller;
 
-import br.com.curso.springkeycloak.models.User;
+import br.com.curso.springkeycloak.model.User;
 
-import br.com.curso.springkeycloak.services.LoginService;
+import br.com.curso.springkeycloak.service.LoginService;
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;

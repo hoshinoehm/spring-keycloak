@@ -1,6 +1,6 @@
-package br.com.curso.springkeycloak.services;
+package br.com.curso.springkeycloak.service;
 
-import br.com.curso.springkeycloak.models.User;
+import br.com.curso.springkeycloak.model.User;
 import org.springframework.http.ResponseEntity;
 
 public interface LoginService<T> {

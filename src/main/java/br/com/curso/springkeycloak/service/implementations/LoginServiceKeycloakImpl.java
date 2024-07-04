@@ -1,10 +1,9 @@
-package br.com.curso.springkeycloak.services.implementations;
+package br.com.curso.springkeycloak.service.implementations;
 
 import br.com.curso.springkeycloak.components.HttpComponent;
-import br.com.curso.springkeycloak.models.User;
-import br.com.curso.springkeycloak.services.LoginService;
+import br.com.curso.springkeycloak.model.User;
+import br.com.curso.springkeycloak.service.LoginService;
 import br.com.curso.springkeycloak.utils.HttpParamsMapBuilder;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
