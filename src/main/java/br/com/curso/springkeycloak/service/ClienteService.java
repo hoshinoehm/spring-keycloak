@@ -1,33 +1,17 @@
 package br.com.curso.springkeycloak.service;
 
-
 import br.com.curso.springkeycloak.model.Cliente;
-import br.com.curso.springkeycloak.repository.ClienteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class ClienteService {
+public interface ClienteService {
 
-    @Autowired
-    private ClienteRepository clienteRepository;
+    List<Cliente> findAll();
 
-    public List<Cliente> findAll() {
-        return clienteRepository.findAll();
-    }
+    Optional<Cliente> findById(Long id);
 
-    public Optional<Cliente> findById(Long id) {
-        return clienteRepository.findById(id);
-    }
+    Cliente save(Cliente cliente);
 
-    public Cliente save(Cliente cliente) {
-        return clienteRepository.save(cliente);
-    }
-
-    public void deleteById(Long id) {
-        clienteRepository.deleteById(id);
-    }
+    void deleteById(Long id);
 }

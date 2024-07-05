@@ -13,11 +13,12 @@ public class Email {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String tipo; // Ex: Comercial, Pessoal, etc.
-    private String endereco;
+    private String email;
+    private String tipo;
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
+    // Getters and Setters
 }

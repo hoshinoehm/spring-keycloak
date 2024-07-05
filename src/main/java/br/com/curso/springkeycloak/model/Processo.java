@@ -1,26 +1,35 @@
 package br.com.curso.springkeycloak.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import lombok.Data;
-
 import jakarta.persistence.*;
-import java.util.Date;
 
-@JsonTypeName("PessoaFisica")
+import java.util.List;
+
 @Entity
-@Data
 public class Processo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String descricao;
-    private Date dataInicio;
+
+    private String numeroProcesso;
+    private String acao;
+    private String objeto;
+    private String juizo;
+    private String linkTribunal;
+    private String observacoes;
+    private Double valorCausa;
+    private Double valorCondenacao;
+    private String distribuidoEm;
+    private String criadoEm;
+    private String ultimosHistoricos;
+    private String recursosDesdobramentos;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
+    @JoinColumn(name = "autor_id")
+    private Cliente autor;
+
+    @ManyToMany(mappedBy = "processos")
+    private List<Documento> documentos;
 
 
-    // Getters and Setters
 }
