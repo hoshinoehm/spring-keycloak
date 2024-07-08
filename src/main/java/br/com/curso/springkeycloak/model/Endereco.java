@@ -1,5 +1,6 @@
 package br.com.curso.springkeycloak.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import jakarta.persistence.*;
@@ -25,6 +26,4 @@ public class Endereco {
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
-
-    // Getters and Setters
 }

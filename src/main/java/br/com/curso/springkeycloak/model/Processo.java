@@ -1,9 +1,12 @@
 package br.com.curso.springkeycloak.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import java.util.List;
 
+@Data
 @Entity
 public class Processo {
 
@@ -30,6 +33,4 @@ public class Processo {
 
     @ManyToMany(mappedBy = "processos")
     private List<Documento> documentos;
-
-
 }

@@ -1,6 +1,6 @@
 package br.com.curso.springkeycloak.model;
 
-import br.com.curso.springkeycloak.model.Enum.TipoCliente;
+import br.com.curso.springkeycloak.model.TipoCliente;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.Date;
@@ -58,7 +58,6 @@ public class Cliente {
     private String agencia;
     private String conta;
     private String pix;
-
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Email> emails;

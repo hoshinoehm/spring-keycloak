@@ -1,8 +1,9 @@
 package br.com.curso.springkeycloak.model;
 
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import java.util.List;
 
@@ -30,5 +31,4 @@ public class Documento {
             inverseJoinColumns = @JoinColumn(name = "processo_id")
     )
     private List<Processo> processos;
-
 }

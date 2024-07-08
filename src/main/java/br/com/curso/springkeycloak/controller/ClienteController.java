@@ -1,8 +1,8 @@
 package br.com.curso.springkeycloak.controller;
-
 import br.com.curso.springkeycloak.model.Cliente;
 import br.com.curso.springkeycloak.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,8 +28,9 @@ public class ClienteController {
     }
 
     @PostMapping
-    public Cliente createCliente(@RequestBody Cliente cliente) {
-        return clienteService.save(cliente);
+    public ResponseEntity<Cliente> createCliente(@RequestBody Cliente cliente) {
+        Cliente savedCliente = clienteService.save(cliente);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedCliente);
     }
 
     @PutMapping("/{id}")
@@ -38,7 +39,8 @@ public class ClienteController {
             return ResponseEntity.notFound().build();
         }
         cliente.setId(id);
-        return ResponseEntity.ok(clienteService.save(cliente));
+        Cliente updatedCliente = clienteService.save(cliente);
+        return ResponseEntity.ok(updatedCliente);
     }
 
     @DeleteMapping("/{id}")

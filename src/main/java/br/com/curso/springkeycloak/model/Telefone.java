@@ -1,11 +1,12 @@
 package br.com.curso.springkeycloak.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
 
-@Entity
 @Data
+@Entity
 public class Telefone {
 
     @Id
@@ -19,6 +20,4 @@ public class Telefone {
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
-
-    // Getters and Setters
 }

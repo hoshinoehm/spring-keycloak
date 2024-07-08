@@ -1,4 +1,4 @@
-package br.com.curso.springkeycloak.model.Enum;
+package br.com.curso.springkeycloak.model;
 
 public enum TipoCliente {
     PESSOA_FISICA,
