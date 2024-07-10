@@ -1,5 +1,6 @@
 package br.com.curso.springkeycloak.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -9,7 +10,6 @@ import java.util.List;
 @Data
 @Entity
 public class Processo {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,10 +27,7 @@ public class Processo {
     private String ultimosHistoricos;
     private String recursosDesdobramentos;
 
-    @ManyToOne
-    @JoinColumn(name = "autor_id")
-    private Cliente autor;
-
     @ManyToMany(mappedBy = "processos")
+    @JsonIgnore  // Adicione esta anotação para evitar a recursão infinita
     private List<Documento> documentos;
 }

@@ -23,7 +23,9 @@ public class Endereco {
     private String estado;
     private String pais;
 
+
     @ManyToOne
     @JoinColumn(name = "cliente_id")
+    @JsonBackReference
     private Cliente cliente;
 }

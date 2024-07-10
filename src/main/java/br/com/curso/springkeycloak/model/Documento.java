@@ -20,8 +20,10 @@ public class Documento {
     private String dataCriacao;
     private String origem;
 
+
     @ManyToOne
     @JoinColumn(name = "cliente_id")
+    @JsonBackReference
     private Cliente cliente;
 
     @ManyToMany

@@ -17,5 +17,7 @@ public class Email {
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
+    @JsonBackReference
     private Cliente cliente;
+
 }
