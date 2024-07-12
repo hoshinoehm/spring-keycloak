@@ -60,6 +60,14 @@ public class ClienteController {
         return ResponseEntity.ok(clientes);
     }
 
+    @GetMapping("/search")
+    public ResponseEntity<List<Cliente>> searchClientes(@RequestParam String search) {
+        List<Cliente> clientes = clienteRepository.searchClientesByName(search);
+        return ResponseEntity.ok(clientes);
+    }
+
+
+
     private void initializeCollections(Cliente cliente) {
         if (cliente.getEmails() == null) {
             cliente.setEmails(new ArrayList<>());

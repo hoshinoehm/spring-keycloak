@@ -34,6 +34,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/login", "/refresh").permitAll();
                     auth.requestMatchers("/api/clientes/**").hasAnyAuthority("OPERATION_READ", "OPERATION_WRITE");
+                    auth.requestMatchers("/api/documentos/**").hasAnyAuthority("OPERATION_READ", "OPERATION_WRITE");
+                    auth.requestMatchers("/api/todos/**").hasAnyAuthority("OPERATION_READ", "OPERATION_WRITE");
                     auth.requestMatchers("/admin").hasAnyAuthority("ADMIN_READ", "ADMIN_WRITE");
                     auth.requestMatchers("/operation").hasAnyAuthority("OPERATION_READ", "OPERATION_WRITE");
                     auth.anyRequest().authenticated();
